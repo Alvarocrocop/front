@@ -1,0 +1,9 @@
+<div class="login-page">
+        <div class="form">
+        <form class="login-form" #tokenForm="ngForm" (ngSubmit)="onSubmit(username.value,password.value)">
+            <input type="text" name="username" #username="ngModel" [(ngModel)]="tokenRequest.username" required>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="tokenRequest.password" required>
+            <button>Login</button>
+        </form>
+        </div>
+</div>

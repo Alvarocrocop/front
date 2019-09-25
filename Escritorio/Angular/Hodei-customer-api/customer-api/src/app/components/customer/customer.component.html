@@ -1,0 +1,104 @@
+<header>
+        <nav>
+          <div class="menu-container">
+            <!-- Menu -->
+            <ul class="menu">
+                <li class="menu-nav">
+                    <a [routerLink]="[ '/home']" routerLinkActive="active">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="menu-logout">
+                    <a [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()">
+                      <span>Logout</span>
+                    </a>
+                </li>  
+            </ul> 
+          </div>
+        </nav>
+</header>
+<div class="fade-screen"></div>
+
+<body>
+<div class="customer-response" *ngIf="customerResponse">
+    <ul>    
+            <li class="customer-id">
+                <p> Id: {{ customerResponse.id }}</p>
+            </li>
+            <li class="customer-name">
+                <p> Contact: {{ customerResponse.name + ' ' + customerResponse.surname1 + ' ' + customerResponse.surname2 }}</p>
+            </li>
+            <li class="customer-idCard">
+                <p>IdCard: {{customerResponse.idCard.number}}</p>
+                <p>Type: {{customerResponse.idCard.type}}</p>
+                <p>Issued: {{customerResponse.idCard.issued}}</p>
+                <p>Expires: {{customerResponse.idCard.expires}}</p>
+                <p>Issuer: {{customerResponse.idCard.issuer}}</p>
+                <p>Country: {{customerResponse.idCard.country}}</p>
+            </li>
+            <li class="customer-state">
+                <p>State: {{ customerResponse.state.id }}</p>
+            </li>
+            <li class="customer-fiscal-address">
+                <p>Fiscal address: {{customerResponse.fiscalAddress.roadType + ' ' + customerResponse.fiscalAddress.road}}</p>
+                <p>Zipcode: {{customerResponse.fiscalAddress.zipCode}} </p>
+                <p>Locality: {{customerResponse.fiscalAddress.locality}} </p>
+            </li>
+    </ul>
+</div>  
+
+
+<div class="customer-response">
+    <li class="customer-id" *ngFor="let element of persons">
+            <p>prueba</p>
+            <p>{{element.id}}</p>
+    </li>
+</div>
+
+
+<!--
+<div class="customer-response" *ngIf="results">
+    <ul>    
+        <li  *ngFor="let item of results | keyvalue"> 
+            {{item.key}} : {{ item.value}}
+            <ul>
+                <li *ngFor="let objects of item | keyvalue">
+                    {{objects.key}} : {{objects.value}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>  
+-->
+<div class="find-form">
+    <form #customerIdForm="ngForm" (ngSubmit)="getById(id)">
+        <p>
+            <label for="id">Customer Id</label>
+            <input type="text" name="id" #id="ngModel" [(ngModel)]="userId" required>
+            <span *ngIf="id.touched && !id.valid">
+                Es obligatorio indicar un ID
+            </span>
+        </p>
+        <input type="submit" value="Búsqueda">
+    </form>
+</div>
+<div class="find-rsql">
+        <form #customerRsqlForm="ngForm" (ngSubmit)="getByRsql(param1,param2)">
+            <p>
+                <label for="type">Type </label>
+                <input type="text" name="type" #type="ngModel" [(ngModel)]="param1" required>
+                <span *ngIf="type.touched && !type.valid">
+                    Es obligatorio el tipo de parámetro de búsqueda
+                </span>
+            </p>
+            <p>
+                <label for="value">Value</label>
+                <input type="text" name="value" #value="ngModel" [(ngModel)]="param2" required>
+                <span *ngIf="value.touched && !value.valid">
+                    Es obligatorio indicar el valor del parámetro
+                </span>
+            </p>            
+            <input type="submit" value="Búsqueda">
+        </form>
+    </div>
+</body>

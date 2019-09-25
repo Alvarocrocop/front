@@ -1,0 +1,59 @@
+<header>
+    <nav>
+        <div class="menu-container">
+            <!-- Menu -->
+            <ul class="menu">
+                <li class="menu-customers">
+                    <a [routerLink]="[ '/customer']" routerLinkActive="active">
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/economic']" routerLinkActive="active">
+                            <span>Economic Activities</span>
+                        </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/job']" routerLinkActive="active">
+                            <span>Job Types</span>
+                        </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/legal']" routerLinkActive="active">
+                            <span>Legal Entities</span>
+                        </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/professions']" routerLinkActive="active">
+                            <span>Professions</span>
+                        </a>
+                </li>
+                <li class="menu-logout">
+                    <a [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()">
+                      <span>Logout</span>
+                    </a>
+                </li>  
+            </ul> 
+        </div>
+    </nav>
+</header>
+<div class="fade-screen"></div>
+
+<!--
+<div>
+    <h3>Inicio</h3>
+    <input type="submit" value="Logout" (click)="logout()">
+</div>
+
+    <nav>
+        <nav>
+            <a [routerLink]="[ '/home']" routerLinkActive="active">Home</a>
+            &nbsp;  
+        <nav>
+            <a [routerLink]="[ '/customer']" routerLinkActive="active">Customer Micro</a>
+            &nbsp; 
+    </nav>
+
+
+
+-->
