@@ -5,6 +5,8 @@ import { CustomerRequest } from '../model/customerRequest';
 import { Router } from '@angular/router';
 import { Customer} from '../model/customerList';
 import { convertCompilerOptionsFromJson } from 'typescript';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+
 @Component({
   selector: 'search-form',
   templateUrl: './search-form.component.html',
@@ -13,30 +15,49 @@ import { convertCompilerOptionsFromJson } from 'typescript';
 
 })
 export class SearchFormComponent implements OnInit {
+
+  name: string;
+  surname1: string;
+  surname2: string;
+  idCardNumber: string;
   
-  _customerRequest: CustomerRequest;
   customers :  Customer[];
   url : string;
-  links: any;
-  link : any[any];
 
   constructor(
     private _router : Router,
     private _customerService : CustomerService ) {
-    this._customerRequest = {
-      "key" : "",
-      "value" : ""
-    }
   }
 
   ngOnInit() {}
 
-  getByRsql(form){
-    this.url = "?search=" + this._customerRequest.key + "==" +this._customerRequest.value;
+  search() {
+    this.url = "?search=" + this.buildRsql()
     this._customerService.getByRsql(this.url).subscribe((data : any) => {
-      this.customers = data._embedded.persons;
-      console.log("customers:")
-      console.log(this.customers)     
+      if(data.page.totalElements > 0) {
+        this.customers = data._embedded.persons;
+      } else {
+        this.customers = []
+      }     
     });
+  }
+
+  buildRsql(){
+    var rsql = "";
+    rsql = this.appendRsql(rsql, "name", this.name)
+    rsql = this.appendRsql(rsql, "surname1", this.surname1)
+    rsql = this.appendRsql(rsql, "surname2", this.surname2)
+    rsql = this.appendRsql(rsql, "idCard.number", this.idCardNumber)
+    return rsql;
+  }
+
+  appendRsql(rsql, key, value) {
+    if(value != null && value.length > 0) {
+      if(rsql.length > 0) {
+        rsql += ";"
+      }
+      rsql += key + "=re=" + value;
+    }
+    return rsql
   }
 }
