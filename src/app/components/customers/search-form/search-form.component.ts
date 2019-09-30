@@ -1,11 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+
 import { CustomerService } from '../../../service/customer.service';
-import { CustomerRequest } from '../model/customerRequest';
 import { Router } from '@angular/router';
 import { Customer} from '../model/customerList';
-import { convertCompilerOptionsFromJson } from 'typescript';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'search-form',
@@ -36,6 +34,7 @@ export class SearchFormComponent implements OnInit {
     this._customerService.getByRsql(this.url).subscribe((data : any) => {
       if(data.page.totalElements > 0) {
         this.customers = data._embedded.persons;
+        console.log(this.customers);
       } else {
         this.customers = []
       }     
@@ -59,5 +58,9 @@ export class SearchFormComponent implements OnInit {
       rsql += key + "=re=" + value;
     }
     return rsql
+  }
+
+  viewCustomer(id) {
+    this._router.navigate(["/customers/", id])
   }
 }

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { customer } from '../components/customers/model/customerList';
+import { Customer } from '../components/customers/model/customerList';
 import { EventEmitter } from '@angular/core';
 @Injectable({
     providedIn: 'root'
@@ -23,9 +23,8 @@ export class CustomerService{
         this.baseUrl = "http://localhost:8084/customers";
     }
 
-    getById(customerRequest):Observable<any>{
-        this._customerRequest = customerRequest;
-        this.url = this.baseUrl+ "/" + customerRequest.id;
+    getById(id):Observable<any>{
+        this.url = this.baseUrl+ "/" + id;
         var token = localStorage.getItem('userToken');
         console.log(token);
         const httpOptions = {
@@ -35,7 +34,7 @@ export class CustomerService{
         return this._http.get(this.url ,{headers: httpOptions});
     }
     
-    getByRsql(params:string):Observable<customer>{
+    getByRsql(params:string):Observable<Customer>{
         var token = localStorage.getItem('userToken');
         this.url = this.baseUrl+ "/" + params;
         console.log(this.url);
@@ -43,12 +42,12 @@ export class CustomerService{
             'Authorization' : "Bearer " + token,
             'accept' :'application/hal+json'
         }
-        return this._http.get<customer>(this.url, {headers : httpOptions}).pipe(
+        return this._http.get<Customer>(this.url, {headers : httpOptions}).pipe(
             map((result:any)=>{
                 this.results = result;
                //result={"_embedded": {"categories": [..]..}
                console.log(this.results);
-               return this.results as customer; //just return "categories"
+               return this.results as Customer; //just return "categories"
             }));
     }
 }

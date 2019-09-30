@@ -1,8 +1,8 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Customer} from '../model/customerList';
 import { CustomerService } from 'src/app/service/customer.service';
+
 @Component({
   selector: 'list-customers',
   templateUrl: './list-customers.component.html',

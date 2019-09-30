@@ -2,15 +2,25 @@
 <div class="find-rsql">
         <form #customerRsqlForm="ngForm" (ngSubmit)="search()">
             <p>
-                <label for="type">Name</label>
-                <input type="text" name="type" #type="ngModel" [(ngModel)]="name" required>
+                <label for="names">Name</label>
+                <input type="text" name="names" #names="ngModel" [(ngModel)]="name" required>
                
             </p>
             <p>
-                <label for="value">First surname</label>
-                <input type="text" name="value" #value="ngModel" [(ngModel)]="surname1" required>
+                <label for="surnames1">First surname</label>
+                <input type="text" name="surnames1" #surnames1="ngModel" [(ngModel)]="surname1" required>
                
-            </p>            
+            </p>
+            <p>
+                    <label for="surnames2">Second surname</label>
+                    <input type="text" name="surnames2" #surnames2="ngModel" [(ngModel)]="surname2" required>
+                   
+                </p>
+                <p>
+                    <label for="idValue">IdCard Number</label>
+                    <input type="text" name="idValue" #idValue="ngModel" [(ngModel)]="idCardNumber" required>
+                   
+                </p>            
             <input type="submit" value="Búsqueda">
         </form>
     </div>
@@ -18,7 +28,7 @@
 <div class="customer-response" *ngIf="customers">
     <ul> RESULTADO :
         <li *ngFor="let item of customers">
-            {{item.name}} {{item.surname1}} {{item.surname2}} - {{item.idCard.number}}
+            <a [routerLink]="['/customers', item.id]">{{item.name}} {{item.surname1}} {{item.surname2}} - {{item.idCard.number}}</a>
         </li>
     </ul>
 </div>

@@ -16,6 +16,7 @@ import { ProfessionsComponent } from './components/professions/professions.compo
 import { SearchFormComponent } from './components/customers/search-form/search-form.component';
 import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CustomerViewComponent } from './components/customers/customer-view/customer-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SearchFormComponent,
     ListCustomersComponent,
     JwPaginationComponent,
-    NavbarComponent
+    NavbarComponent,
+    CustomerViewComponent,
   ],
   imports: [
     BrowserModule,
