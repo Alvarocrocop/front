@@ -1,0 +1,40 @@
+<header>
+    <nav>
+        <div class="menu-container">
+            <!-- Menu -->
+            <ul class="menu">
+                <li class="menu-customers">
+                    <a [routerLink]="[ '/customers']" routerLinkActive="active">
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/economic']" routerLinkActive="active">
+                            <span>Economic Activities</span>
+                        </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/job']" routerLinkActive="active">
+                            <span>Job Types</span>
+                        </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/legal']" routerLinkActive="active">
+                            <span>Legal Entities</span>
+                        </a>
+                </li>
+                <li class="menu-customers">
+                        <a [routerLink]="[ '/professions']" routerLinkActive="active">
+                            <span>Professions</span>
+                        </a>
+                </li>
+                <li class="menu-logout">
+                    <a [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()">
+                      <span>Logout</span>
+                    </a>
+                </li>  
+            </ul> 
+        </div>
+    </nav>
+</header>
+<div class="fade-screen"></div>
