@@ -1,4 +1,4 @@
-
+<div class="background">
 <div class="find-rsql">
         <form #customerRsqlForm="ngForm" (ngSubmit)="search()">
             <p>
@@ -24,12 +24,24 @@
             <input type="submit" value="Búsqueda">
         </form>
     </div>
-
-<div class="customer-response" *ngIf="customers">
-    <ul> RESULTADO :
-        <li *ngFor="let item of customers">
-            <a [routerLink]="['/customers', item.id]">{{item.name}} {{item.surname1}} {{item.surname2}} - {{item.idCard.number}}</a>
-        </li>
-    </ul>
 </div>
-
+<!-- RESULT LIST -->
+<!-- TODO: MOVER A UN COMPONENTE EXTERNO EL LISTADO DE LA BÚSQUEDA -->
+<table *ngIf="customers">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surnames </th>
+            <th scope="col">ID Card</th>
+            <th scope="col">View Details</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of customers">
+                <td>{{item.name}}</td>
+                <td>{{item.surname1}} {{item.surname2}}</td>
+                <td>{{item.idCard.number}}</td>
+                <td> <a [routerLink]="['/customers', item.id]"> View details </a>  </td>
+            </tr>
+        </tbody>
+</table>

@@ -9,7 +9,7 @@ import { EconomicComponent } from './components/economic/economic.component';
 import { JobComponent } from './components/job/job.component';
 import { LegalComponent } from './components/legal/legal.component';
 import { ProfessionsComponent } from './components/professions/professions.component';
-import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
+
 const appRoutes : Routes = [
     {path:'home', component:HomeComponent},
     {path:'login', component: LoginComponent},
@@ -17,7 +17,6 @@ const appRoutes : Routes = [
     {path: 'customers/:id', component: CustomerViewComponent},
     {path: 'economic', component: EconomicComponent},
     {path: 'job', component: JobComponent},
-    {path: 'list', component : ListCustomersComponent},
     {path: 'legal', component: LegalComponent},
     {path: 'professions', component: ProfessionsComponent},
     {path:'**', component: LoginComponent}

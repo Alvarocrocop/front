@@ -14,7 +14,6 @@ import { JobComponent } from './components/job/job.component';
 import { LegalComponent } from './components/legal/legal.component';
 import { ProfessionsComponent } from './components/professions/professions.component';
 import { SearchFormComponent } from './components/customers/search-form/search-form.component';
-import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CustomerViewComponent } from './components/customers/customer-view/customer-view.component';
 
@@ -29,7 +28,6 @@ import { CustomerViewComponent } from './components/customers/customer-view/cust
     LegalComponent,
     ProfessionsComponent,
     SearchFormComponent,
-    ListCustomersComponent,
     JwPaginationComponent,
     NavbarComponent,
     CustomerViewComponent,

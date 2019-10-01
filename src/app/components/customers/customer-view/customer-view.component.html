@@ -1,4 +1,104 @@
-<p>customer-view works!</p>
+<navbar></navbar>
 
-
-<pre>{{customer | json}}</pre>
+<table >
+        <thead>
+          <tr>
+            <th scope="col"><strong> Key </strong></th>
+            <th scope="col"><strong> Value </strong></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td>{{customer.id}}</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{customer.name}}</td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td>{{customer.surname1}} {{customer.surname2}}</td>
+            </tr>
+            <tr *ngFor="let item of customer.idCard | keyvalue">
+                <td>ID Card {{item.key}}</td>
+                <td>{{item.value}}</td>
+            </tr> 
+            <tr>
+                <td>State</td>
+                <td>{{customer.state.id}}</td>
+            </tr>      
+            <tr>
+                <td>Gender</td>
+                <td>{{customer.gender}}</td>
+            </tr>
+            <tr>
+                <td>Birth</td>
+                <td>{{customer.birth}}</td>
+            </tr>
+            <tr>
+                <td>Birth Country</td>
+                <td>{{customer.birthCountry.id}}</td>
+            </tr>
+            <tr *ngFor="let item of customer.nationalities">
+                <td>Nationalities</td>
+                <td *ngFor="let id of item | keyvalue"> {{id.value}}</td>
+            </tr>
+            <tr>
+                <td>Civil Status</td>
+                <td>{{customer.civilStatus}}</td>
+            </tr>
+            <tr>
+                <td>Roadtype</td>
+                <td>{{customer.fiscalAddress.roadType}}</td>
+            </tr>
+            <tr>
+                <td>Road</td>
+                <td>{{customer.fiscalAddress.road}}</td>
+            </tr>
+            <tr>
+                <td>Zip Code</td>
+                <td>{{customer.fiscalAddress.zipCode}}</td>
+            </tr>
+            <tr>
+                <td>Locality</td>
+                <td>{{customer.fiscalAddress.locality}}</td>
+            </tr>
+            <tr>
+                <td>Province ID</td>
+                <td>{{customer.fiscalAddress.province.id}}</td>
+            </tr>
+            <tr>
+                <td>Province Code</td>
+                <td>{{customer.fiscalAddress.province.code}}</td>
+            </tr>
+            <tr>
+                <td>Province Name</td>
+                <td>{{customer.fiscalAddress.province.name}}</td>
+            </tr>
+            <tr>
+                <td>Province Country</td>
+                <td>{{customer.fiscalAddress.province.country}}</td>
+            </tr>
+            <tr *ngFor="let item of customer.fiscalAddress.province.metadata| keyvalue">
+                <td>Fiscal Address Metadata {{item.key}}</td>
+                <td>{{item.value}}</td>
+            </tr>
+            <tr *ngFor="let item of customer.contactData | keyvalue">
+                <td>{{item.key}}</td>
+                <td>{{item.value}}</td>
+            </tr>
+            <tr>
+                <td>Detail Profession</td>
+                <td>{{customer.detail.profession}}</td>
+            </tr>
+            <tr>
+                <td>Detail JobType</td>
+                <td>{{customer.detail.jobType.id}}</td>
+            </tr>
+            <tr *ngFor="let item of customer.metadata | keyvalue">
+                <td>Metadata {{item.key}}</td>
+                <td>{{item.value}}</td>
+            </tr>
+        </tbody>
+</table>

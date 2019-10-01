@@ -1,113 +1,8 @@
-// ----------------------------
-  // NAV
-  // ----------------------------
-  
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 48px;
-    min-width: 1024px;
-    background: rgba(0,0,0,0.8);
-    font-size: 18px;
-    z-index: 2;
-  }
-  
-  .menu-container {
-    position: relative;
-    margin: 0 auto;
-    margin-top: -5px;
-    max-width: 980px;
-    padding: 0 22px;
-    
-    ul {
-      list-style: none;
-    }
-    
-    ul li {
-      display: inline-block;
-      text-align: center;
-      width: auto;
-      margin-right: 76px;
-      
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    
-    ul li a {
-      display: block;
-      font-family: -apple-system, BlinkMacSystemFont, 
-        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
-        "Fira Sans", "Droid Sans", "Helvetica Neue", 
-        sans-serif;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 100;
-      font-size: 16px;
-      float: left;
-      
-      &:hover {
-        color: #969696;
-      }
-    }
-    
-    &.menu-apple {
-      background-repeat: no-repeat;
-      width: 20px;
-    }
-  }
-  
-  .apple-icon {
-    font-size: 20px;
-  }
-  
-  .find-form {
-	margin:100px auto;
-	max-width: 400px;
-	padding: 20px 12px 10px 20px;
-	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-.find-form label{
-	margin:0 0 3px 0;
-	padding:0px;
-	display:block;
-	font-weight: bold;
-}
-.find-form input[type=text], 
-textarea, 
-select{
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	border:1px solid #BEBEBE;
-	padding: 7px;
-	margin:0px;
-	outline: none;	
-}
-.find-form .field-textarea{
-	height: 100px;
-}
-.find-form input[type=submit], .find-form input[type=button]{
-	background: #969696;
-	padding: 8px 15px 8px 15px;
-	border: none;
-	color: #fff;
-}
-.find-form input[type=submit]:hover, .find-form input[type=button]:hover{
-	background: #969696;
-	box-shadow:none;
-	-moz-box-shadow:none;
-	-webkit-box-shadow:none;
-}
-.find-form .required{
-	color:red;
-}
 
 // Find RSQL
-
+.background {
+	background: white;
+}
 .find-rsql {
 	margin:100px auto;
 	max-width: 400px;
@@ -127,12 +22,14 @@ select{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	background: white;
 	border:1px solid #BEBEBE;
 	padding: 7px;
 	margin:0px;
 	outline: none;	
 }
 .find-rsql .field-textarea{
+	background: white;
 	height: 100px;
 }
 .find-rsql input[type=submit], .find-rsql input[type=button]{
@@ -146,29 +43,97 @@ select{
 	box-shadow:none;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
+	align-items: center;
 }
 .find-rsql .required{
 	color:red;
 }
-// --------------
-// Customer Response
 // ---------------
+// Result List Styles
+// ---------------
+table {
+	background: #969696;
 
-.customer-response {
-	margin:100px auto;
-	max-width: 400px;
-	padding: 20px 12px 10px 20px;
-	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-.customer-response li {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0;
 	padding: 0;
-	display: block;
-	list-style: none;
-	margin: 10px 0 0 0;
-}
-.find-form label{
-	margin:0 0 3px 0;
-	padding:0px;
-	display:block;
-	font-weight: bold;
-}
+	width: 100%;
+	table-layout: fixed;
+  }
+  
+  table caption {
+	font-size: 1.5em;
+	margin: .5em 0 .75em;
+  }
+  
+  table tr {
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	padding: .35em;
+  }
+  
+  table th,
+  table td {
+	font-family: -apple-system, BlinkMacSystemFont, 
+	  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+	  "Fira Sans", "Droid Sans", "Helvetica Neue", 
+	  sans-serif;
+	color: black;
+	font-weight: 100;
+	font-size: 16px;
+	padding: .625em;
+	text-align: center;
+  }
+  
+  table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+	table {
+	  border: 0;
+	}
+  
+	table caption {
+	  font-size: 1.3em;
+	}
+	
+	table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+	}
+	
+	table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+	  margin-bottom: .625em;
+	}
+	
+	table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  font-size: .8em;
+	  text-align: right;
+	}
+	
+	table td::before {
+
+	  content: attr(data-label);
+	  float: left;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	}
+	
+	table td:last-child {
+	  border-bottom: 0;
+	}
+  }

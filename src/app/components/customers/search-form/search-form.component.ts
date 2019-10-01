@@ -13,14 +13,16 @@ import { Customer} from '../model/customerList';
 
 })
 export class SearchFormComponent implements OnInit {
+  
+  url : string;
 
   name: string;
   surname1: string;
   surname2: string;
   idCardNumber: string;
-  
+
   customers :  Customer[];
-  url : string;
+  pageOfItems: Array<any>;
 
   constructor(
     private _router : Router,
@@ -60,7 +62,4 @@ export class SearchFormComponent implements OnInit {
     return rsql
   }
 
-  viewCustomer(id) {
-    this._router.navigate(["/customers/", id])
-  }
 }

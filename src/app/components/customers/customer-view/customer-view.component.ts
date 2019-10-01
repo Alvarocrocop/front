@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 import { CustomerService } from '../../../service/customer.service';
 import { Customer} from '../model/customerList';
 
 @Component({
-  selector: 'app-customer-view',
+  selector: 'customer-view',
   templateUrl: './customer-view.component.html',
-  styleUrls: ['./customer-view.component.css']
+  styleUrls: ['./customer-view.component.scss']
 })
 export class CustomerViewComponent implements OnInit {
 
@@ -21,6 +20,7 @@ export class CustomerViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.customer = null;
     this._router.params.subscribe(params => {
       this.id = params['id']
       this._customerService.getById(this.id).subscribe((data : any) => {

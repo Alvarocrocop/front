@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.bearerToken = response;
       console.log(this.bearerToken.access_token);
 
-      /*
+      
       localStorage.setItem('userToken', this.bearerToken.access_token);
       this._router.navigate(["/home"]);
       console.log(localStorage.getItem('userToken'));
@@ -53,12 +53,6 @@ export class LoginComponent implements OnInit {
       console.log(<any>error);
       this._router.navigate(["/login"]);
       this.invalidLogin();
-      ); 
-    }*/
-    },
-    error => {
-      console.log(<any>error);
-    }
-   );
-  }
+    }); 
+    }  
 }
