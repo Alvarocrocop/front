@@ -1,20 +1,5 @@
-<header>
-        <nav>
-          <div class="menu-container">
-            <!-- Menu -->
-            <ul class="menu">
-                <li class="menu-nav">
-                    <a [routerLink]="[ '/home']" routerLinkActive="active">
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="menu-logout">
-                    <a [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()">
-                      <span>Logout</span>
-                    </a>
-                </li>  
-            </ul> 
-          </div>
-        </nav>
-</header>
-<div class="fade-screen"></div>
+
+<div class="navbar">
+      <a class="home" [routerLink]="[ '/home']" routerLinkActive="active"> Home </a>
+      <a class="logout" [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()"> Logout </a>
+</div>

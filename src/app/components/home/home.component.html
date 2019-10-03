@@ -1,40 +1,16 @@
-<header>
-    <nav>
-        <div class="menu-container">
-            <!-- Menu -->
-            <ul class="menu">
-                <li class="menu-customers">
-                    <a [routerLink]="[ '/customers']" routerLinkActive="active">
-                        <span>Customers</span>
-                    </a>
-                </li>
-                <li class="menu-customers">
-                        <a [routerLink]="[ '/economic']" routerLinkActive="active">
-                            <span>Economic Activities</span>
-                        </a>
-                </li>
-                <li class="menu-customers">
-                        <a [routerLink]="[ '/job']" routerLinkActive="active">
-                            <span>Job Types</span>
-                        </a>
-                </li>
-                <li class="menu-customers">
-                        <a [routerLink]="[ '/legal']" routerLinkActive="active">
-                            <span>Legal Entities</span>
-                        </a>
-                </li>
-                <li class="menu-customers">
-                        <a [routerLink]="[ '/professions']" routerLinkActive="active">
-                            <span>Professions</span>
-                        </a>
-                </li>
-                <li class="menu-logout">
-                    <a [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()">
-                      <span>Logout</span>
-                    </a>
-                </li>  
-            </ul> 
-        </div>
-    </nav>
-</header>
-<div class="fade-screen"></div>
+
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Customer API
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+            <a [routerLink]="[ '/customers']" routerLinkActive="active"> Customers</a>
+            <a [routerLink]="[ '/economic']" routerLinkActive="active"> Economic Activities</a>
+            <a [routerLink]="[ '/job']" routerLinkActive="active"> Job Types</a>
+            <a [routerLink]="[ '/legal']" routerLinkActive="active"> Legal Entities</a>
+            <a [routerLink]="[ '/professions']" routerLinkActive="active"> Professions </a>
+    </div>
+  </div>
+  <a class="logout" [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()"> Logout </a>
+</div>
