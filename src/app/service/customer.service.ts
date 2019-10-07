@@ -3,17 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Customer } from '../components/customers/model/customerList';
-import { EventEmitter } from '@angular/core';
+import { Customer } from '../components/customer-Api/customers/model/customerList';
 @Injectable({
     providedIn: 'root'
 })
 export class CustomerService{
 
-    $sendCustomers = new EventEmitter();
 
     public baseUrl: string;
-    public _customerRequest: any;
     public url: string;
     public results : any;
 

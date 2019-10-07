@@ -8,14 +8,16 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { CustomerComponent } from './components/customers/customer/customer.component';
-import { EconomicComponent } from './components/economic/economic.component';
-import { JobComponent } from './components/job/job.component';
-import { LegalComponent } from './components/legal/legal.component';
-import { ProfessionsComponent } from './components/professions/professions.component';
-import { SearchFormComponent } from './components/customers/search-form/search-form.component';
+import { CustomerComponent } from './components/customer-Api/customers/customer/customer.component';
+import { EconomicComponent } from './components/customer-Api/economic/economic.component';
+import { JobComponent } from './components/customer-Api/job/job.component';
+import { LegalComponent } from './components/customer-Api/legal/legal.component';
+import { ProfessionsComponent } from './components/customer-Api/professions/professions.component';
+import { SearchFormComponent } from './components/customer-Api/customers/search-form/search-form.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CustomerViewComponent } from './components/customers/customer-view/customer-view.component';
+import { CustomerViewComponent } from './components/customer-Api/customers/customer-view/customer-view.component';
+import { PoliciesComponent } from './components/policies-Api/policies/policies.component';
+import { PoliciesSearchFormComponent } from './components/policies-Api/policies-search-form/policies-search-form.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { CustomerViewComponent } from './components/customers/customer-view/cust
     JwPaginationComponent,
     NavbarComponent,
     CustomerViewComponent,
+    PoliciesComponent,
+    PoliciesSearchFormComponent,
   ],
   imports: [
     BrowserModule,
