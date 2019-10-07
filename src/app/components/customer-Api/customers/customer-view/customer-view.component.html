@@ -1,0 +1,66 @@
+<navbar></navbar>
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <img src="https://elasesorfinanciero.com/wp-content/uploads/2016/02/CNP-partners-logo.jpeg" style="width:100%; max-width:150px;">
+                            <h3>Customer details</h3>
+                        </td>
+                        <td>ID: {{id}}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="heading">
+            <body>  
+                <div id = "boxes"> 
+                    <div id="leftbox1">
+                        <h2>Personal Data:</h2>
+                            Name {{customer.name }} {{customer.surname1 + ' ' + customer.surname2}}<br>
+                            Gender: {{customer.gender}} <br>  
+                            Birth : {{customer.birth}} <br>
+                            IdCard Number: {{customer.idCard.number}}<br>
+                            IdCard Type: {{customer.idCard.type}}<br>
+                            IdCard Issued: {{customer.idCard.issued}}<br>
+                            IdCard Expires: {{customer.idCard.expires}}<br>
+                            IdCard Issuer: {{customer.idCard.Issuer}}<br>
+                            IdCard Country: {{customer.idCard.Country}}<br>
+                    </div>
+                        <div id = "rightbox1"> 
+                        <h2>Contact Data:</h2> 
+                            Email: {{customer.contactData.email}} <br>
+                            Alternate Email: {{customer.contactData.alternateEmail}} <br>
+                            CellPhone: {{customer.contactData.cellPhone}} <br>
+                            LandLine phone: {{customer.contactData.landlinePhone}} <br>
+                            Fax: {{customer.contactData.fax}} <br>
+                            Website: {{customer.contactData.website}} <br>
+                    </div>  
+                    <div id = "leftbox2"> 
+                            <h2>Fiscal Address:</h2>
+                            
+                            Address : {{customer.fiscalAddress.roadType + ' ' + customer.fiscalAddress.road}} <br>
+                            Zipcode: {{customer.fiscalAddress.zipCode}} <br>
+                            Locality: {{customer.fiscalAddress.locality}} <br>
+                            Country: {{customer.fiscalAddress.country.id}} <br>
+                            Province Id: {{customer.fiscalAddress.province.id}} <br>
+                            Province Code: {{customer.fiscalAddress.province.code}} <br>
+                            Province Name: {{customer.fiscalAddress.province.name}} <br>
+                            Province Country: {{customer.fiscalAddress.province.country}} <br>
+                    </div> 
+                    <div id = "rightbox2"> 
+                        <h2>Lorem Ipsum:</h2> 
+                       <ul *ngFor="let item of customer.nationalities | keyvalue">
+                        {{item.key}} <br>
+                        {{item.value}} <br>
+                       </ul>
+                    </div> 
+                </div>
+            </body>  
+        </tr>
+    </table>
+</div>
+
