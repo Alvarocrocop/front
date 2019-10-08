@@ -17,7 +17,7 @@ export class CustomerComponent implements OnInit {
   }
   ngOnInit() {
     console.log(localStorage.getItem('userToken'))
-   // if (localStorage.getItem('userToken') === null ){
-   //   this._router.navigate(["/login"]); }
+    if (localStorage.getItem('userToken') === null ){
+      this._router.navigate(["/login"]); }
   }
 }

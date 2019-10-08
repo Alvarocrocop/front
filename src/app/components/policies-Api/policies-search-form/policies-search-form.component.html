@@ -1,1 +1,61 @@
-<p>policies-search-form works!</p>
+<div class="background">
+    <div class="find-rsql">
+            <form #policiesRsqlForm="ngForm" (ngSubmit)="search()">
+                <p>
+                    <label for="networksId">Network ID</label>
+                    <input type="text" name="networksId" #networksId="ngModel" [(ngModel)]="networkId" required>
+                   
+                </p>
+                <p>
+                    <label for="certificatesNumber">Certificate Number</label>
+                    <input type="text" name="certificatesNumber" #certificatesNumber="ngModel" [(ngModel)]="certificateNumber" required>
+                   
+                </p>
+                <p>
+                        <label for="personsId">Person Id</label>
+                        <input type="text" name="personsId" #personsId="ngModel" [(ngModel)]="personId" required>
+                       
+                    </p>
+                    <p>
+                        <label for="agreementsId">Agreement Id</label>
+                        <input type="text" name="agreementsId" #agreemeentsId="ngModel" [(ngModel)]="agreementId" required>
+                       
+                    </p>            
+                    <p>
+                        <label for="states">State</label>
+                        <input type="text" name="states" #states="ngModel" [(ngModel)]="state" required>
+            
+                    </p>            
+                <input type="submit" value="Búsqueda">
+            </form>
+        </div>
+    </div>
+
+
+    
+<!-- RESULT LIST 
+ TODO: MOVER A UN COMPONENTE EXTERNO EL LISTADO DE LA BÚSQUEDA -->
+<table *ngIf="policies">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Network Id</th>
+        <th scope="col">Certificate Number</th>
+        <th scope="col">Person Id</th>
+        <th scope="col">Agreement Id</th>
+        <th scope="col">State</th>
+        <th scope="col">View Details</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of policies">
+            <td>{{item.id}}</td>
+            <td>{{item.networkId}}</td>
+            <td>{{item.certificateNumber}}</td>
+            <td *ngFor="let x of item.relations"> <p>{{x.id}}</p></td>
+            <td>{{item.agreementId}}</td>
+            <td>{{item.state}}</td>
+            <td> <a [routerLink]="['/policies', item.id]"> View details </a>  </td>
+        </tr>
+    </tbody>
+</table>  

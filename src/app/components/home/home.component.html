@@ -12,5 +12,13 @@
             <a [routerLink]="[ '/professions']" routerLinkActive="active"> Professions </a>
     </div>
   </div>
+  <div class="dropdown">
+  <button class="dropbtn" >Policies API
+    <i class="fa fa-caret-down"></i> 
+  </button>
+  <div class="dropdown-content">
+    <a [routerLink]="[ '/policies']" routerLinkActive="active"> Policies</a>
+  </div>
+</div>
   <a class="logout" [routerLink]="[ '/login']" routerLinkActive="active" (click)="logout()"> Logout </a>
 </div>

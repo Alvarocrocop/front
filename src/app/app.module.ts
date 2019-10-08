@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CustomerViewComponent } from './components/customer-Api/customers/customer-view/customer-view.component';
 import { PoliciesComponent } from './components/policies-Api/policies/policies.component';
 import { PoliciesSearchFormComponent } from './components/policies-Api/policies-search-form/policies-search-form.component';
+import { PoliciesViewDetailComponent } from './components/policies-Api/policies-view-detail/policies-view-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PoliciesSearchFormComponent } from './components/policies-Api/policies-
     CustomerViewComponent,
     PoliciesComponent,
     PoliciesSearchFormComponent,
+    PoliciesViewDetailComponent,
   ],
   imports: [
     BrowserModule,

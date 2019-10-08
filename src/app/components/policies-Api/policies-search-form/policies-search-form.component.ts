@@ -4,7 +4,7 @@ import { PoliciesService } from 'src/app/service/policies.service';
 import { policy } from '../model/policy';
 
 @Component({
-  selector: 'app-policies-search-form',
+  selector: 'policies-search-form',
   templateUrl: './policies-search-form.component.html',
   styleUrls: ['./policies-search-form.component.scss']
 })
@@ -27,8 +27,9 @@ export class PoliciesSearchFormComponent implements OnInit {
 
   ngOnInit() {}
 
-  Search(){
+  search(){
     this.url = "?search=" + this.buildRsql();
+    console.log(this.url)
     this._policiesService.getByRsql(this.url).subscribe((data : any) => {
       if( data.page.totalElements >0 ) {
         this.policies = data._embedded.policies;
@@ -46,7 +47,7 @@ export class PoliciesSearchFormComponent implements OnInit {
     rsql = this.appendRsql(rsql, "personId", this.personId)
     rsql = this.appendRsql(rsql, "agreementId", this.agreementId)
     rsql = this.appendRsql(rsql, "state", this.state)
-    
+    return rsql;
   }
 
   appendRsql(rsql, key, value) {
