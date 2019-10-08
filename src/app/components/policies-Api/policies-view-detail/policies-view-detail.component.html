@@ -1,0 +1,64 @@
+<app-home></app-home>
+
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <img src="https://elasesorfinanciero.com/wp-content/uploads/2016/02/CNP-partners-logo.jpeg" style="width:100%; max-width:150px;">
+                            <h3>Policy details</h3>
+                        </td>
+                        <td>ID: {{policy.id}}
+                        </td>
+                        <td> {{policy.agreementId}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <!--
+    <tr class="heading">
+        <body> 
+            <div id = "boxes"> 
+                <div id="leftbox1">
+                    <h2>General Data:</h2>
+                    
+                        Agreement Id: {{data.agreementId}}<br>
+                        Network Id: {{policy.networkId}} <br>  
+                        Certificate Number: {{policy.certificateNumber}} <br>
+                        Policy Number: {{policy.policyNumber}}<br>
+                        Effective: {{policy.effective}}<br>
+                        End: {{policy.end}}<br>
+                        Expiration: {{policy.expiration}}<br>
+                        State: {{policy.state}}<br>
+                        Substate: {{policy.substate}}<br>
+                </div>
+                    <div id = "rightbox1"> 
+                        End Reason: {{policy.endReason}} <br>
+                        Regular Payment: {{policy.regularPayment}}<br>
+                        Currency Id: {{policy.currencyId}} <br>
+                        Reinsurance: {{policy.reinsurance}} <br>
+                        ReinsuranceDetail: {{policy.reinsuranceDetail}} <br>
+                        Collective: {{policy.collective}} <br>
+                        Collective Policy Id: {{policy.collectivePolicyId}} <br>
+                        Beneficiary Type: {{policy.beneficiaryType}} <br>
+                        Beneficiary Free Text: {{policy.beneficiaryFreeText}} <br>
+                </div>  
+                <div id = "leftbox2" *ngFor="let item of policy.relations"> 
+                        <h2>Relations:</h2>
+                        <p>id: {{item.id}}</p><br>
+                </div> 
+                <div id = "rightbox2"> 
+                    <h2>Lorem Ipsum:</h2> 
+                    <ul *ngFor="let item of customer.nationalities | keyvalue">
+                    {{item.key}} <br>
+                    {{item.value}} <br>
+                    </ul>
+                </div> 
+            </div>
+        </body>  
+    </tr>
+    -->
+    </table>
+</div>
