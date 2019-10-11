@@ -25,8 +25,8 @@ export class CustomerViewComponent implements OnInit {
       this.id = params['id']
       this._customerService.getById(this.id).subscribe((data : any) => {
         this.customer = data;
+        console.log(this.customer);
       });
     })
   }
-
 }

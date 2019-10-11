@@ -12,18 +12,33 @@
                         </td>
                         <td>ID: {{policy.id}}
                         </td>
-                        <td> {{policy.agreementId}}</td>
                     </tr>
                 </table>
             </td>
         </tr>
-    <!--
+        
+       <pre >
+        {{policy | json}}
+       </pre> 
+    <!--   
     <tr class="heading">
         <body> 
             <div id = "boxes"> 
                 <div id="leftbox1">
                     <h2>General Data:</h2>
-                    
+                    <ul *ngFor="let item of policy">
+                        <p>{{item.id}}</p>
+                        <p> Agreement Id: {{item.agreementId}} </p>
+                        <p>Network Id: {{item.networkId}} </p>  
+                        <p>Certificate Number: {{item.certificateNumber}} </p>
+                        <p>Policy Number: {{item.policyNumber}}</p>
+                        <p>Effective: {{item.effective}}</p>
+                        <p>End: {{item.end}}</p>
+                        <p>Expiration: {{item.expiration}}</p>
+                        <p>State: {{item.state}}</p>
+                        <p>Substate: {{item.substate}}</p>
+                    </ul>
+               
                         Agreement Id: {{data.agreementId}}<br>
                         Network Id: {{policy.networkId}} <br>  
                         Certificate Number: {{policy.certificateNumber}} <br>
@@ -33,7 +48,9 @@
                         Expiration: {{policy.expiration}}<br>
                         State: {{policy.state}}<br>
                         Substate: {{policy.substate}}<br>
-                </div>
+                
+                    </div>-->
+<!--
                     <div id = "rightbox1"> 
                         End Reason: {{policy.endReason}} <br>
                         Regular Payment: {{policy.regularPayment}}<br>
@@ -56,9 +73,10 @@
                     {{item.value}} <br>
                     </ul>
                 </div> 
+           
             </div>
         </body>  
     </tr>
-    -->
+     -->
     </table>
 </div>

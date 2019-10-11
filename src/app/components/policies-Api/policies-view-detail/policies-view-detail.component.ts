@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { policy } from '../model/policy';
 import { ActivatedRoute } from '@angular/router';
-import { PoliciesService } from 'src/app/service/policies.service';
 
+import { PoliciesService } from 'src/app/service/policies.service';
+import { policy } from '../model/policy';
 @Component({
   selector: 'app-policies-view-detail',
   templateUrl: './policies-view-detail.component.html',
