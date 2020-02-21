@@ -1,0 +1,11 @@
+
+
+
+  <ul>
+      <li> Emp Name | Emp code</li>
+      <li *ngFor="let item of collection | paginate:{itemsPerPage: 5, currentPage:p}">     
+      {{item.name}} | {{item.code}}</li> 
+   </ul>
+   <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+<router-outlet></router-outlet>
